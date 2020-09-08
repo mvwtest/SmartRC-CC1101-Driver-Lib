@@ -3,23 +3,14 @@
 //In addition, the gdo0 and gdo2 pin are not required.
 //https://github.com/LSatan/SmartRC-CC1101-Driver-Lib
 //by Little_S@tan
-#include <ELECHOUSE_CC1101_SRC_DRV.h>
+#include <ELECHOUSE_CC1101_SRC_DRV_stm32.h>
 
 //int gdo0;
 
 void setup(){
-/*
-#ifdef ESP32
-gdo0 = 2;  // for esp32! GDO0 on GPIO pin 2.
-#elif ESP8266
-gdo0 = 5;  // for esp8266! GDO0 on pin 5 = D1.
-#else
-gdo0 = 6;  // for Arduino! GDO0 on pin 6.
-#endif 
-*/
     Serial.begin(9600);
     ELECHOUSE_cc1101.Init();                // 啟用前必須先初始化擦除101!
-//  ELECHOUSE_cc1101.setGDO(gdo0,0);        // 設置 (gdo0,gdo2)Pin. 本例0表示忽略 Gdo2 .
+   ELECHOUSE_cc1101.setGDO(28,0);        // 設置 (gdo0,gdo2)Pin. 本例0表示忽略 Gdo2 .
     ELECHOUSE_cc1101.setCCMode(1);          // 将配置设置为内部传输模式.
     ELECHOUSE_cc1101.setModulation(0);      // 设置调制模式. 0 = 2-FSK, 1 = GFSK, 2 = ASK/OOK, 3 = 4-FSK, 4 = MSK.
     ELECHOUSE_cc1101.setMHZ(433.92);        // 设置基本频率. (默认 = 433.92).cc1101 支持: 300-348 MHZ, 387-464MHZ and 779-928MHZ..
