@@ -1,6 +1,6 @@
 // These examples are from the Electronics Cookbook by Simon Monk
-//https://github.com/LSatan/SmartRC-CC1101-Driver-Lib
-// mod by Little_S@tan
+//https://github.com/mvwtest/SmartRC-CC1101-Lib-stm32
+//by mvwtest
 
 #include <ELECHOUSE_CC1101_SRC_DRV_stm32.h>
 
