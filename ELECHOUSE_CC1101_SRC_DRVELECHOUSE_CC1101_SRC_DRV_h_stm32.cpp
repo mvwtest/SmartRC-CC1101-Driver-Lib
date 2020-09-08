@@ -14,7 +14,7 @@ cc1101 Driver for RC Switch. Mod by Little Satan. With permission to modify and 
 ----------------------------------------------------------------------------------------------------------------
 */
 #include <SPI.h>
-#include "ELECHOUSE_CC1101_SRC_DRV.h"
+#include "ELECHOUSE_CC1101_SRC_DRV_h_stm32.h"
 #include <Arduino.h>
 
 /****************************************************************/
@@ -28,10 +28,10 @@ byte frend0;
 byte chan = 0;
 int pa = 12;
 byte last_pa;
-byte SCK_PIN = 13;
-byte MISO_PIN = 12;
-byte MOSI_PIN = 11;
-byte SS_PIN = 10;
+byte SCK_PIN = PA5;
+byte MISO_PIN = PA6;
+byte MOSI_PIN = PA7;
+byte SS_PIN = PA4;
 byte GDO0;
 byte GDO2;
 bool spi = 0;
@@ -271,15 +271,15 @@ byte ELECHOUSE_CC1101::SpiReadStatus(byte addr)
 void ELECHOUSE_CC1101::setSpi(void){
   if (spi == 0){
   #if defined __AVR_ATmega168__ || defined __AVR_ATmega328P__
-  SCK_PIN = 13; MISO_PIN = 12; MOSI_PIN = 11; SS_PIN = 10;
+  SCK_PIN = PA5; MISO_PIN = PA6; MOSI_PIN = PA7; SS_PIN = PA4;
   #elif defined __AVR_ATmega1280__ || defined __AVR_ATmega2560__
-  SCK_PIN = 52; MISO_PIN = 50; MOSI_PIN = 51; SS_PIN = 53;
-  #elif ESP8266
-  SCK_PIN = 14; MISO_PIN = 12; MOSI_PIN = 13; SS_PIN = 15;
-  #elif ESP32
-  SCK_PIN = 18; MISO_PIN = 19; MOSI_PIN = 23; SS_PIN = 5;
+  SCK_PIN = 25; MISO_PIN = 26; MOSI_PIN = 27; SS_PIN = 24;
+  #elif stm32
+  SCK_PIN = PA5; MISO_PIN = PA6; MOSI_PIN = PA7; SS_PIN = PA4;
+  #elif STM32
+  SCK_PIN = 25; MISO_PIN = 26; MOSI_PIN = 27; SS_PIN = 24;
   #else
-  SCK_PIN = 13; MISO_PIN = 12; MOSI_PIN = 11; SS_PIN = 10;
+  SCK_PIN = PA5; MISO_PIN = PA6; MOSI_PIN = PA7; SS_PIN = PA4;
   #endif
 }
 }
