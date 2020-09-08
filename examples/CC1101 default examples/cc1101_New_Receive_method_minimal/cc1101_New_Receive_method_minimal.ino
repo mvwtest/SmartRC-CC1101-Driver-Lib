@@ -1,8 +1,9 @@
 //New receiving method. This method checks the Rx Fifo for any data it contains.
 //It allows you to do several things in a loop.
 //In addition, the gdo0 and gdo2 pin are not required.
-//https://github.com/LSatan/SmartRC-CC1101-Driver-Lib
-//by Little_S@tan
+//https://github.com/mvwtest/SmartRC-CC1101-Lib-stm32
+//by mvwtest
+
 #include <ELECHOUSE_CC1101_SRC_DRV_stm32.h>
 
 
