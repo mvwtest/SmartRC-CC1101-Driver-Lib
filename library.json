@@ -1,5 +1,5 @@
 {
-  "name": "SmartRC-CC1101-Driver-Lib",
+  "name": "SmartRC-CC1101-Lib-stm32",
   "description": "This driver library can be used for many libraries that use a simple RF ASK module, with the advantages of the cc1101 module.It offers many direct setting options as in SmartRF Studio and calculates settings such as MHz directly.",
   "keywords": "rf, radio, wireless, cc1101",
   "authors":
