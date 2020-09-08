@@ -1,22 +1,15 @@
 // These examples are from the Electronics Cookbook by Simon Monk
 //https://github.com/LSatan/SmartRC-CC1101-Driver-Lib
 // mod by Little_S@tan
-#include <ELECHOUSE_CC1101_SRC_DRV.h>
+#include <ELECHOUSE_CC1101_SRC_DRV_stm32.h>
 
-int gdo0;
+int gdo0=28;
 
 byte transmitt_byte[11] = {72,101,108,108,111,32,87,111,114,108,100};
 char *transmitt_char = "Hello World";
 
 void setup() {
-
-#ifdef ESP32
-gdo0 = 2;  // for esp32! GDO0 on GPIO pin 2.
-#elif ESP8266
-gdo0 = 5;  // for esp8266! GDO0 on pin 5 = D1.
-#else
-gdo0 = 6;  // for Arduino! GDO0 on pin 6.
-#endif 
+ 
 
     Serial.begin(9600);
     ELECHOUSE_cc1101.Init();                // must be set to initialize the cc1101!
