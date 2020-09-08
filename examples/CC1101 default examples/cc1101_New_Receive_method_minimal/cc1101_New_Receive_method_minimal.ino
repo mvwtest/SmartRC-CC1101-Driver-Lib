@@ -3,23 +3,13 @@
 //In addition, the gdo0 and gdo2 pin are not required.
 //https://github.com/LSatan/SmartRC-CC1101-Driver-Lib
 //by Little_S@tan
-#include <ELECHOUSE_CC1101_SRC_DRV.h>
+#include <ELECHOUSE_CC1101_SRC_DRV_stm32.h>
 
-//int gdo0;
 
 void setup(){
-/*
-#ifdef ESP32
-gdo0 = 2;  // for esp32! GDO0 on GPIO pin 2.
-#elif ESP8266
-gdo0 = 5;  // for esp8266! GDO0 on pin 5 = D1.
-#else
-gdo0 = 6;  // for Arduino! GDO0 on pin 6.
-#endif 
-*/
     Serial.begin(9600);
     ELECHOUSE_cc1101.Init();               // must be set to initialize the cc1101!
-//  ELECHOUSE_cc1101.setGDO(gdo0,0);      // set lib internal gdo pins (gdo0,gdo2). Gdo2 not use for this example.
+    ELECHOUSE_cc1101.setGDO(28,0);      // set lib internal gdo pins (gdo0,gdo2). Gdo2 not use for this example.
     ELECHOUSE_cc1101.setCCMode(1);       // set config for internal transmission mode.
     ELECHOUSE_cc1101.setModulation(0);  // set modulation mode. 0 = 2-FSK, 1 = GFSK, 2 = ASK/OOK, 3 = 4-FSK, 4 = MSK.
     ELECHOUSE_cc1101.setMHZ(433.92);   // Here you can set your basic frequency. The lib calculates the frequency automatically (default = 433.92).The cc1101 can: 300-348 MHZ, 387-464MHZ and 779-928MHZ. Read More info from datasheet.
