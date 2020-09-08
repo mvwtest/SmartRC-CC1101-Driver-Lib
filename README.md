@@ -1,4 +1,4 @@
-﻿# SmartRC-CC1101-Driver-Lib_V2.5.1 ----For STM32-Bluepill 
+﻿# SmartRC-CC1101-Lib_V2.5.1 ----For STM32-Bluepill 
  
   SCK_PIN = PA5; MISO_PIN = PA6; MOSI_PIN = PA7; SS_PIN = PA4;  GDO0 = PB0/28
   
