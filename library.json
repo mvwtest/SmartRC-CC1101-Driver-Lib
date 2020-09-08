@@ -4,12 +4,12 @@
   "keywords": "rf, radio, wireless, cc1101",
   "authors":
   {
-    "name": "Little Satan"
+    "name": "MVWTEST"
   },
   "repository":
   {
     "type": "git",
-    "url": "https://github.com/LSatan/SmartRC-CC1101-Driver-Lib"
+    "url": "https://github.com/mvwtest/SmartRC-CC1101-Driver-Lib"
   },
   "version": "2.5.1",
   "frameworks": [
